@@ -10,19 +10,50 @@
 
 function pigLatin(origString) {
   let vowels = ["a","e","i","o","u"]
-  let splitString = origString.split('');
-  
-  // let newArray = []
-  // splitString.forEach(function(letter) {
-  //   if (vowels.includes)
-  // })
+  let cons = []
+  let firstVowel = false
+  let splitString = origString.split('');  
   vowels.forEach(function(vowel) {
     if (splitString[0] === vowel) {
       splitString.push("way");
-      
-    }
+      firstVowel = true  
+    } 
+  // SPEC 2
+  if (firstVowel = false) {
+      vowels.forEach(function(vowel) {
+        let i = 1;
+        if (splitString[i] !== vowel) {
+          i++;
+        }
+        let firstCons = splitSring.splice(0, i);
+      })
+  }
+    
   })
   return splitString.join("");
 }
 
-console.log(pigLatin("a"));
+
+
+
+
+// BENS WIERD IDEA
+if (firstVowel = false) {
+  for(let i=1;i<3;i++) {  
+    vowels.forEach(function(vowel) {
+      let i = 1;
+      let indexCounter = 0;
+      if (splitString[i] !== vowel) {
+        i++;
+      }
+      let firstCons = splitSring.splice(0, i);
+    })
+}
+
+
+
+
+
+
+
+console.log(pigLatin("away"));
