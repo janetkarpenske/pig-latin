@@ -1,16 +1,12 @@
 // Interface Logic
-
 $(document).ready(function() {
   $("#form").submit(function(event) {
     event.preventDefault();
-
     const userInput = $("#input").val().toLowerCase();
-    let translation = newPigLatin(userInput);
-    //capTrans = translation.charAt(0).toUpperCase();
+    let translation = newPigLatin(userInput);    
     $("#display").text(translation.charAt(0).toUpperCase() + translation.slice(1) + ".");
   })
 })
-
 function newPigLatin(userInput) {
   let inputSplit = userInput.split(" ") 
   newString = [] 
