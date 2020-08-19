@@ -1,10 +1,13 @@
+// Interface Logic
+
 $(document).ready(function() {
   $("#form").submit(function(event) {
     event.preventDefault();
 
-    const userInput = $("#input").val();
+    const userInput = $("#input").val().toLowerCase();
     let translation = newPigLatin(userInput);
-    $("#display").text(translation);
+    //capTrans = translation.charAt(0).toUpperCase();
+    $("#display").text(translation.charAt(0).toUpperCase() + translation.slice(1) + ".");
   })
 })
 
@@ -31,8 +34,7 @@ function pigLatin(origString) {
     }
   })   
   if (firstVowel === false) {   
-    let i;   
-    // HERE?
+    let i;    
     for(i = 1; i <= splitString.length; i++) {
       let stop = false
       vowels.forEach(function(vowel) {
@@ -42,8 +44,7 @@ function pigLatin(origString) {
     if (stop === true) {
       break;
     }
-  }
-  
+  }  
   let indexQ = splitString.indexOf("q"); 
   if (indexQ < i && indexQ >= 0) { 
     let isU = indexQ + 1;
@@ -51,8 +52,6 @@ function pigLatin(origString) {
       i += 1;
     }
   }
-
-
   let firstCons = splitString.splice(0, i);
   splitString.push(firstCons.join("") + "ay"); 
   }
