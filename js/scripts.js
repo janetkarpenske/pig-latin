@@ -1,9 +1,22 @@
-// $(document).ready(function() {
-//   $("#formOne").submit(function(event) {
-//     event.preventDefault();
+$(document).ready(function() {
+  $("#form").submit(function(event) {
+    event.preventDefault();
 
-//   })
-// })
+    const userInput = $("#input").val();
+    let translation = newPigLatin(userInput);
+    $("#display").text(translation);
+  })
+})
+
+function newPigLatin(userInput) {
+  let inputSplit = userInput.split(" ") 
+  newString = [] 
+  inputSplit.forEach(function(word) {
+    pigWord = pigLatin(word)
+    newString.push(pigWord)    
+});
+  return newString.join(" ");
+}
 
 
 //Business Logic:
@@ -30,7 +43,7 @@ function pigLatin(origString) {
       break;
     }
   }
-  //new
+  
   let indexQ = splitString.indexOf("q"); 
   if (indexQ < i && indexQ >= 0) { 
     let isU = indexQ + 1;
@@ -38,7 +51,7 @@ function pigLatin(origString) {
       i += 1;
     }
   }
-//end new
+
 
   let firstCons = splitString.splice(0, i);
   splitString.push(firstCons.join("") + "ay"); 
@@ -46,7 +59,7 @@ function pigLatin(origString) {
   return splitString.join("");
 }
 
-console.log(pigLatin("qabalistic"));
+
 
 
 
