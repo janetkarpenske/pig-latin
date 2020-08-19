@@ -19,7 +19,7 @@ function pigLatin(origString) {
   vowels.forEach(function(vowel) {
     if (splitString[0] === vowel) {
       splitString.push("way");
-      //return splitString.join();
+      
     }
   })
   return splitString.join("");
