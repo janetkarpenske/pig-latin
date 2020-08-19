@@ -9,7 +9,7 @@
 This program will take input from the user in the form of a sentance and translate it into Pig Latin. Weird!
 
 ## Specifications
-|Test#| Description | Input Example | Output |
+|Specs| Description | Input Example | Output |
 |--|-------------|---------------|--------|
 |1| Words that begin with a vowel will have "way" added to the end | "a" | "away" |
 |2| For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay". | "dog" | "ogday" |
