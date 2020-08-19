@@ -9,51 +9,32 @@
 //Business Logic:
 
 function pigLatin(origString) {
-  let vowels = ["a","e","i","o","u"]
-  let cons = []
+  let vowels = ["a","e","i","o","u"]  
   let firstVowel = false
-  let splitString = origString.split('');  
+  let splitString = origString.split(''); 
   vowels.forEach(function(vowel) {
     if (splitString[0] === vowel) {
       splitString.push("way");
-      firstVowel = true  
-    } 
-  // SPEC 2
-  if (firstVowel = false) {
+      firstVowel = true;  
+    }
+  })   
+  if (firstVowel === false) {   
+    let i;   
+    for(i = 1; i <= splitString.length; i++) {
+      console.log("cons loop start" + i)
+      let stop = false
       vowels.forEach(function(vowel) {
-        let i = 1;
-        if (splitString[i] !== vowel) {
-          i++;
-        }
-        let firstCons = splitSring.splice(0, i);
+        if (splitString[i] === vowel) {
+         stop = true }
       })
+    if (stop === true) {
+      break;
+    }
   }
-    
-  })
+  let firstCons = splitString.splice(0, i);
+  splitString.push(firstCons + "ay"); 
+  }
   return splitString.join("");
 }
 
-
-
-
-
-// BENS WIERD IDEA
-if (firstVowel = false) {
-  for(let i=1;i<3;i++) {  
-    vowels.forEach(function(vowel) {
-      let i = 1;
-      let indexCounter = 0;
-      if (splitString[i] !== vowel) {
-        i++;
-      }
-      let firstCons = splitSring.splice(0, i);
-    })
-}
-
-
-
-
-
-
-
-console.log(pigLatin("away"));
+console.log(pigLatin("dog"));
