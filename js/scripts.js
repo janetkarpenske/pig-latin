@@ -7,7 +7,6 @@
 
 
 //Business Logic:
-
 function pigLatin(origString) {
   let vowels = ["a","e","i","o","u"]  
   let firstVowel = false
@@ -20,8 +19,8 @@ function pigLatin(origString) {
   })   
   if (firstVowel === false) {   
     let i;   
+    // HERE?
     for(i = 1; i <= splitString.length; i++) {
-      console.log("cons loop start" + i)
       let stop = false
       vowels.forEach(function(vowel) {
         if (splitString[i] === vowel) {
@@ -31,10 +30,23 @@ function pigLatin(origString) {
       break;
     }
   }
+  //new
+  let indexQ = splitString.indexOf("q"); 
+  if (indexQ < i && indexQ >= 0) { 
+    let isU = indexQ + 1;
+    if (splitString[isU] === "u") {
+      i += 1;
+    }
+  }
+//end new
+
   let firstCons = splitString.splice(0, i);
-  splitString.push(firstCons + "ay"); 
+  splitString.push(firstCons.join("") + "ay"); 
   }
   return splitString.join("");
 }
 
-console.log(pigLatin("dog"));
+console.log(pigLatin("qabalistic"));
+
+
+
