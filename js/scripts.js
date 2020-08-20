@@ -7,6 +7,8 @@ $(document).ready(function() {
     $("#display").text(translation.charAt(0).toUpperCase() + translation.slice(1) + ".");
   })
 })
+
+//Business Logic:
 function newPigLatin(userInput) {
   let inputSplit = userInput.split(" ") 
   newString = [] 
@@ -17,8 +19,6 @@ function newPigLatin(userInput) {
   return newString.join(" ");
 }
 
-
-//Business Logic:
 function pigLatin(origString) {
   let vowels = ["a","e","i","o","u"]  
   let firstVowel = false

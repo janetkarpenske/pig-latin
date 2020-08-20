@@ -9,13 +9,17 @@ h1 {
 }
 
 body {
-  background-color: rgb(199, 214, 236);
+  background-color: rgb(168, 211, 236);
 }
 
 .container {
   padding: 50px;
-  padding-bottom: 600px;
+  padding-bottom: 500px;
   background-color: white;
+}
+
+#form {
+  margin-top: 40px;
 }
 
 #display {
